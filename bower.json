@@ -1,0 +1,7 @@
+{
+  "name": "less-template",
+  "version": "0.1.0",
+  "dependencies": {
+	"jquery": "latest"
+  }
+}
