@@ -10,6 +10,7 @@
     "grunt-contrib-less": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
+    "grunt-mkdir": "^0.1.2",
     "grunt-uncss": "latest"
   }
 }

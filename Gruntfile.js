@@ -1,6 +1,6 @@
 module.exports = function (grunt) {
 	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json');
+		pkg: grunt.file.readJSON('package.json'),
 
 		vendor: {
 			jquery: 'bower_components/jquery/dist/jquery.js'
@@ -17,7 +17,7 @@ module.exports = function (grunt) {
 
 		banner: {
 			build: 'Built at: <%= grunt.template.now %>\nVersion: <%= pkg.version %>\nAuthor: <%= pkg.author.name %>\n\n'
-		}
+		},
 
 		mkdir: {
 			all: {
@@ -62,7 +62,7 @@ module.exports = function (grunt) {
 					'<%= prj.dev %>css/concat.css': '<%= styles %>main.less'
 				}
 			}
-		}
+		},
 
 		cssmin: {
 			with_banner: {
@@ -104,21 +104,20 @@ module.exports = function (grunt) {
 					livereload: true
 				}
 			}
-		},
-
-		grunt.loadNpmTasks('grunt-contrib-concat');
-		grunt.loadNpmTasks('grunt-contrib-uglify');
-		grunt.loadNpmTasks('grunt-contrib-less');
-		grunt.loadNpmTasks('grunt-contrib-cssmin');
-		grunt.loadNpmTasks('grunt-uncss');
-		grunt.loadNpmTasks('grunt-contrib-jshint');
-		grunt.loadNpmTasks('grunt-mkdir');
-		grunt.loadNpmTasks('grunt-contrib-watch');
-
-		grunt.registerTask('build:prod', ['jshint', 'concat', 'uglify', 'less', 'cssmin', 'uncss']);
-		grunt.registerTask('build:dev', ['concat', 'less', 'watch']);
-		grunt.registerTask('init', ['mkdir', 'concat', 'less', 'watch']);
-		grunt.registerTask('default', ['watch']);
-
+		}
 	});
+
+	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-uncss');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-mkdir');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+
+	grunt.registerTask('build:prod', ['jshint', 'concat', 'uglify', 'less', 'cssmin', 'uncss']);
+	grunt.registerTask('build:dev', ['concat', 'less', 'watch']);
+	grunt.registerTask('init', ['mkdir', 'concat', 'less', 'watch']);
+	grunt.registerTask('default', ['watch']);
 }
