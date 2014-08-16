@@ -92,7 +92,7 @@ module.exports = function (grunt) {
 				}
 			},
 			less: {
-				files: ['<%= styles %>*.less'],
+				files: ['<%= styles %>/**/*.less'],
 				tasks: ['less'],
 				options: {
 					livereload: true

@@ -3,14 +3,21 @@
 .container {
 	width: @container-width;
 	margin: 0 auto;
+	padding: 0 15px;
 }
 
 /* Rows */
 
 .row {
 	width: 100%;
+	clear: both;
+	margin: 0 -15px;
 }
 
 /* Columns */
 
 .generate-columns(@columns);
+
+.inner {
+	padding: 0 @gutter / 2;
+}

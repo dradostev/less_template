@@ -1,17 +1,9 @@
 .nav {
-
 	&--horizontal {
-		ul {
-			li {
-				list-style: none;
-				display: inline-block;
-				float: left;
-				a {
-					display: table-cell;
-					text-align: center;
-					padding: @nav-horizontal-links-padding;
-				}
-			}
+		.justify-horizontal-links(block, inline-block);
+		&--justified {
+			.justify-horizontal-links(table, table-cell);
 		}
 	}
+	margin: @default-vertical-margin 0;
 }

@@ -39,3 +39,4 @@ Icon
 # Grunt & bower project build
 bower_components/
 node_modules/
+public/dev/css/concat.css

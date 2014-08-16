@@ -1,0 +1,16 @@
+.justify-horizontal-links(@display-ul, @display-li) {
+	height: @nav-horizontal-height;
+	ul {
+		width: 100%;
+		display: @display-ul;
+		li {
+			list-style: none;
+			display: @display-li;
+			text-align: center;
+			a {
+				padding: @nav-horizontal-links-padding 0;
+				display: block;
+			}
+		}
+	}
+}
