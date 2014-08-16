@@ -1,6 +1,9 @@
 /* Intervals */
+@default-padding: 10px;
 @default-horizontal-padding: 20px;
 @default-vertical-padding: 10px;
+
+@default-margin: 10px;
 @default-horizontal-margin: 20px;
 @default-vertical-margin: 10px;
 
@@ -23,11 +26,33 @@
 @default-font-size: 1em;
 @default-font-family: 'Georgia', serif;
 @text-line-height: 150%;
-@default-font-color: #444;
-@default-pale-font-color: lighten(@default-font-color, 25%);
+@default-font-color: @basic-black;
+@default-pale-font-color: @basic-light-gray;
 
 @heading-size: 3em;
 @heading-font-family: @default-font-family;
 @heading-margin: 5px 0 10px 0;
-@default-heading-color: darken(@default-font-color, 10%);
+@default-heading-color: @basic-heavy-black;
 @subheading-size-modifier: .65;
+
+/* Borders */
+
+@default-border-color: @basic-light-gray;
+
+/* Colors */
+
+@basic-heavy-black: darken(@basic-black, 10%);
+@basic-black: #444;
+@basic-gray: lighten(@basic-black, 15%);
+@basic-light-gray: lighten(@basic-gray, 15%);
+@basic-ultralight-gray: lighten(@basic-light-gray, 15%);
+@basic-white: #fff;
+
+/*
+@basic-color:
+@sec-color:
+@ter-color:
+@complimentary-color:
+@complimentary-sec-color:
+@complimentary-ter-color: 
+*/
