@@ -1,14 +1,23 @@
 p, span {
 	line-height: @text-line-height;
+	font-size: @default-font-size;
+	font-family: @default-font-family;
+	color: @default-font-color;
+	text-align: justify;
 }
 
 h1, h2, h3, h4, h5, h6 {
-
+	font-family: @heading-font-family;
+	color: @default-heading-color;
+	margin: @heading-margin;
+	&.subheading {
+		color: @default-pale-font-color;
+	}
 }
 
-h1 { font-size: @heading-size; }
-h2 { font-size: @heading-size * .8; }
-h3 { font-size: @heading-size * .6; }
-h4 { font-size: @heading-size * .4; }
-h5 { font-size: @heading-size * .2; }
-h6 { font-size: @heading-size * .15; }
+h1 { font-size: @heading-size; .subheading-size(@heading-size); }
+h2 { font-size: @heading-size * .8; .subheading-size(@heading-size * .8); }
+h3 { font-size: @heading-size * .6; .subheading-size(@heading-size * .6); }
+h4 { font-size: @heading-size * .4; .subheading-size(@heading-size * .4); }
+h5 { font-size: @heading-size * .2; .subheading-size(@heading-size * .2); }
+h6 { font-size: @heading-size * .15;.subheading-size(@heading-size * .15); }

@@ -3,7 +3,7 @@
 .container {
 	width: @container-width;
 	margin: 0 auto;
-	padding: 0 15px;
+	padding: 0 @gutter / 2;
 }
 
 /* Rows */
@@ -11,7 +11,7 @@
 .row {
 	width: 100%;
 	clear: both;
-	margin: 0 -15px;
+	margin: @default-vertical-margin -@gutter / 2;
 }
 
 /* Columns */

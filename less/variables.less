@@ -20,6 +20,14 @@
 
 /* Typography */
 
-@text-line-height: 140%;
+@default-font-size: 1em;
+@default-font-family: 'Georgia', serif;
+@text-line-height: 150%;
+@default-font-color: #444;
+@default-pale-font-color: lighten(@default-font-color, 25%);
 
 @heading-size: 3em;
+@heading-font-family: @default-font-family;
+@heading-margin: 5px 0 10px 0;
+@default-heading-color: darken(@default-font-color, 10%);
+@subheading-size-modifier: .65;
