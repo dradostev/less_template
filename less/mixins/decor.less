@@ -12,3 +12,21 @@
 	border: 1px solid @basic-light-gray;
 	border-radius: 8px;
 }
+
+.navbar {
+	background: linear-gradient(to bottom, @basic-ultralight-gray 0%, @basic-light-gray 100%);
+	border-radius: 4px;
+	border: 1px solid @basic-light-gray;
+	li {
+		a {
+			color: @basic-gray;
+			font-size: @nav-font-size;
+			font-family: @nav-font-family;
+			text-decoration: none;
+			&:hover,
+			&:active {
+				color: darken(@basic-gray, 20%);
+			}
+		}
+	}
+}
