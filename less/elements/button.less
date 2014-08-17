@@ -1,0 +1,40 @@
+button,
+input[type=button],
+input[type=submit] {
+	
+}
+
+.button {
+	.button-size (little);
+	.button-size (default);
+	.button-size (large);
+	.button-size (verylarge);
+
+	&--basic {
+		.button-color (@basic-color-light, @basic-color, @basic-white, light);
+	}
+	&--comp {
+		.button-color (@complimentary-color-light, @complimentary-color, @basic-white, light);
+	}
+
+	.button-size (@size) {
+		&--@{size} {
+			padding: ~"@{button-@{size}-padding}";
+			margin: ~"@{button-@{size}-margin}";
+			font-size: ~"@{button-@{size}-font-size}";
+			border-radius: 4px;
+			& { .button-color (@basic-light-gray, @basic-gray, @basic-black, dark); }
+		}
+	}
+
+	.button-color (@top-color, @bottom-color, @text-color, @inset) {
+		background: linear-gradient(to bottom, @top-color 0%, @bottom-color 100%);
+		color: @text-color;
+		border: 1px solid @bottom-color;
+		.text-inset (@inset);
+		&:hover,
+		&:active {
+			background: linear-gradient(to bottom, @bottom-color 0%, @top-color 100%);
+		}
+	}
+}

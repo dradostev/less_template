@@ -1,10 +1,10 @@
-.panel-mixin(@panel, @heading-bg-color, @heading-text-color, @body-bg-color) {
+.panel-mixin(@panel, @heading-bg-color, @heading-text-color, @body-bg-color, @body-text-color) {
 		margin: @default-margin;
 		.@{panel}__heading {
 			.heading(@heading-bg-color, @heading-text-color);
 		}
 		.@{panel}__body {
-			.body (@body-bg-color);
+			.body (@body-bg-color, @body-text-color);
 		}
 
 		.heading (@color, @text-color) {
@@ -15,8 +15,10 @@
 			h3 { font-size: @heading-size * .4 }
 		}
 
-		.body (@color) {
+		.body (@color, @text-color) {
 			padding: @default-padding;
 			background-color: @color;
+			color: @text-color;
+			h1, h2, h3, h4, h5, h6, p, span { color: @text-color; }
 		}
 	}

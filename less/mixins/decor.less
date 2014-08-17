@@ -45,3 +45,11 @@
 		}
 	}
 }
+
+.text-inset (@inset) when (@inset = dark) {
+	text-shadow: 0px 1px 0px #fff;
+}
+
+.text-inset (@inset) when (@inset = light) {
+	text-shadow: -1px -1px 1px rgba(44,44,44,0.5);
+}

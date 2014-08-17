@@ -1,9 +1,17 @@
 .panel {
 	&--basic {
-		.panel-mixin (panel, @basic-color, @basic-white, @basic-color-ultralight);
+		.panel-mixin (panel, @basic-color, @basic-white, @basic-color-ultralight, @basic-black);
 	}
 
 	&--comp {
-		.panel-mixin (panel, @complimentary-color, @basic-white, @complimentary-color-ultralight);
+		.panel-mixin (panel, @complimentary-color, @basic-white, @complimentary-color-ultralight, @basic-black);
+	}
+
+	&--neutral {
+		.panel-mixin (panel, @basic-light-gray, @basic-black, @basic-ultralight-gray, @basic-black);
+	}
+
+	&--dark {
+		.panel-mixin (panel, @basic-black, @basic-white, @basic-gray, @basic-ultralight-gray);
 	}
 }
