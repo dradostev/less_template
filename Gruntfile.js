@@ -28,7 +28,7 @@ module.exports = function (grunt) {
 		},
 
 		jshint: {
-			files: ['<%= prj.dev %>/js/*.js'],
+			files: ['<%= scripts %>*.js'],
 			options: {
 				globals: {
 					jQuery: true,
@@ -43,7 +43,7 @@ module.exports = function (grunt) {
 			dist: {
 				src: [
 					'<%= vendor.jquery %>',
-					'<%= prj.dev %>js/*.js'
+					'<%= scripts %>*.js'
 				],
 				dest: '<%= prj.dev %>js/dev.js'
 			}
@@ -85,7 +85,7 @@ module.exports = function (grunt) {
 
 		watch : {
 			scripts: {
-				files: ['<%= prj.dev %>js/*.js'],
+				files: ['<%= scripts %>*.js'],
 				tasks: ['jshint', 'concat'/*, 'uglify'*/],
 				options: {
 					livereload: true

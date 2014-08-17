@@ -1,7 +1,16 @@
 /* Container */
 
 .container {
-	width: @container-width;
+	@media @phone {
+		max-width: @phone-container-width;
+	}
+	@media @tablet {
+		max-width: @tablet-container-width;
+	}
+	@media @desktop {
+		max-width: @container-width;
+	}
+	
 	margin: 0 auto;
 	padding: 0 @gutter / 2;
 }
@@ -17,6 +26,12 @@
 /* Columns */
 
 .generate-columns(@columns);
+
+@media @phone {
+	[class^="column"] {
+		width: 100%;
+	}
+}
 
 .inner {
 	padding: 0 @gutter / 2;

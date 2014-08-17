@@ -27,6 +27,21 @@
 /* Container */
 
 @container-width: 1280px;
+@tablet-container-width: 960px;
+@phone-container-width: 480px;
+
+/* Devices */
+
+@desktop-min: 1299px;
+/* @desktop-max: */
+@tablet-min: 960px;
+@tablet-max: 1299px;
+@phone-min: 360px;
+@phone-max: 720px;
+
+@desktop: ~"only screen and (min-width: @{desktop-min})";
+@tablet: ~"only screen and (min-width: @{tablet-min}) and (max-width: @{tablet-max})";
+@phone: ~"only screen and (min-width: @{phone-min}) and (max-width: @{phone-max})";
 
 /* Columns */
 
