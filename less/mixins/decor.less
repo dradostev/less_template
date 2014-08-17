@@ -53,3 +53,11 @@
 .text-inset (@inset) when (@inset = light) {
 	text-shadow: -1px -1px 1px rgba(44,44,44,0.5);
 }
+
+.context-background (@color, @text-color, @padding, @margin) {
+	background-color: @color;
+	padding: @padding/3 @padding;
+	margin: @margin/2 0;
+	color: @text-color;
+	h1, h2, h3, h4, h5, h6, p, span { color: @text-color; }
+}
