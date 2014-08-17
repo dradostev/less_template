@@ -1,8 +1,40 @@
 .nav {
 	&--horizontal {
+		.ul-no-margin ();
 		.justify-horizontal-links(block, inline-block);
 		&--justified {
+			.ul-no-margin ();
 			.justify-horizontal-links(table, table-cell);
 		}
 	}
+	&--vertical {
+		ul {
+			margin: 0;
+			ul {
+				margin: @default-vertical-margin 0 @default-vertical-margin @default-horizontal-margin;
+			}
+			li {
+				.vertical-nav-link ();
+			}
+		}
+		&--listyled {
+			ul {
+				li {
+					list-style-type: square;
+					.vertical-nav-link ();
+				}
+			}
+		}
+	}
+}
+
+.vertical-nav-link () {
+	a {
+		display: block;
+		padding: @default-vertical-padding @default-horizontal-padding;
+	}
+}
+
+.ul-no-margin () {
+	ul { margin: 0; }
 }

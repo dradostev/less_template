@@ -30,3 +30,18 @@
 		}
 	}
 }
+
+.navstack {
+	ul > li > a {
+		color: @basic-gray;
+		font-size: @nav-font-size;
+		font-family: @nav-font-family;
+		text-decoration: none;
+		&:hover,
+		&:active {
+			color: darken(@basic-gray, 20%);
+			background-color: @basic-ultralight-gray;
+			border-radius: 4px;
+		}
+	}
+}

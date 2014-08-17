@@ -21,3 +21,14 @@ h3 { font-size: @heading-size * .6; .subheading-size(@heading-size * .6); }
 h4 { font-size: @heading-size * .4; .subheading-size(@heading-size * .4); }
 h5 { font-size: @heading-size * .2; .subheading-size(@heading-size * .2); }
 h6 { font-size: @heading-size * .15;.subheading-size(@heading-size * .15); }
+
+a {
+	color: @basic-color;
+	&:hover,
+	&:active {
+		color: @complimentary-color;
+	}
+	&:visited {
+		color: @complimentary-color-dark;
+	}
+}
