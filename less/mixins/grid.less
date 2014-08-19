@@ -1,7 +1,9 @@
-.generate-columns(@n, @i: 1) when (@i =< @n) {
-	.column--@{i} {
-		float: left;
-		width: (@i * 100% / @n);
+.generate-columns(@device, @n, @i: 1) when (@i =< @n) {
+	@media @@device {
+		.column--@{device}--@{i} {
+			float: left;
+			width: (@i * 100% / @n);
+		}
 	}
-	.generate-columns(@n, (@i + 1));
+	.generate-columns(@device, @n, (@i + 1));
 }

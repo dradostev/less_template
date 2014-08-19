@@ -64,6 +64,15 @@ module.exports = function (grunt) {
 			}
 		},
 
+		autoprefixer: {
+			multiple_files: {
+		      expand: true,
+		      flatten: true,
+		      src: '<%= prj.dev %>css/concat.css',
+		      dest: '<%= prj.dev %>css/concat.css'
+		    }
+		},
+
 		cssmin: {
 			with_banner: {
 				options: {
@@ -115,8 +124,9 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-mkdir');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-autoprefixer');
 
-	grunt.registerTask('build:prod', ['jshint', 'concat', 'uglify', 'less', 'cssmin', 'uncss']);
+	grunt.registerTask('build:prod', ['jshint', 'concat', 'uglify', 'less', 'autoprefixer', 'cssmin', 'uncss']);
 	grunt.registerTask('build:dev', ['concat', 'less', 'watch']);
 	grunt.registerTask('init', ['mkdir', 'concat', 'less', 'watch']);
 	grunt.registerTask('default', ['watch']);

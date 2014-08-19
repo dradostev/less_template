@@ -25,13 +25,9 @@
 
 /* Columns */
 
-.generate-columns(@columns);
-
-@media @phone {
-	[class^="column"] {
-		width: 100%;
-	}
-}
+.generate-columns(desktop, @columns);
+.generate-columns(tablet, @columns);
+.generate-columns(phone, @columns);
 
 .inner {
 	padding: 0 @gutter / 2;
