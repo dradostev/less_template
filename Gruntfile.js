@@ -3,7 +3,8 @@ module.exports = function (grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 
 		vendor: {
-			jquery: 'bower_components/jquery/dist/jquery.js'
+			jquery: 'bower_components/jquery/dist/jquery.js',
+			dropit: 'bower_components/dropit/dropit.js'
 		},
 
 		prj: {
@@ -43,6 +44,7 @@ module.exports = function (grunt) {
 			dist: {
 				src: [
 					'<%= vendor.jquery %>',
+					'<%= vendor.dropit %>',
 					'<%= scripts %>*.js'
 				],
 				dest: '<%= prj.dev %>js/dev.js'
@@ -69,7 +71,7 @@ module.exports = function (grunt) {
 		      expand: true,
 		      flatten: true,
 		      src: '<%= prj.dev %>css/concat.css',
-		      dest: '<%= prj.dev %>css/concat.css'
+		      dest: '<%= prj.dev %>css/prefixed.css'
 		    }
 		},
 
