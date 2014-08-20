@@ -1,0 +1,29 @@
+.hidden {
+	.hidden_on(desktop);
+	.hidden_on(laptop);
+	.hidden_on(tablet);
+	.hidden_on(phone);
+}
+
+.shown {
+	.shown_on(desktop);
+	.shown_on(laptop);
+	.shown_on(tablet);
+	.shown_on(phone);
+}
+
+.hidden_on(@device) {
+	@media @@device {
+		&--@{device} {
+			visibility: hidden;
+		}
+	}
+}
+
+.shown_on(@device) {
+	@media @@device {
+		&--@{device} {
+			visibility: visible;
+		}
+	}
+}

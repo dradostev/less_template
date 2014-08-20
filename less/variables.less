@@ -7,23 +7,6 @@
 @default-horizontal-margin: 20px;
 @default-vertical-margin: 10px;
 
-/* Buttons */
-
-@button-default-margin: 10px 0 0 5px;
-@button-default-padding: 10px 20px;
-
-@button-little-margin: @button-default-margin;
-@button-little-padding: 5px 10px;
-@button-large-margin: @button-default-margin;
-@button-large-padding: 15px 30px;
-@button-verylarge-margin: @button-default-margin;
-@button-verylarge-padding: 20px 40px;
-
-@button-default-font-size: @default-font-size * 1.2;
-@button-little-font-size: @default-font-size;
-@button-large-font-size: @default-font-size * 1.4;
-@button-verylarge-font-size: @default-font-size * 1.6;
-
 /* Container */
 
 @container-width: 1280px;
@@ -32,16 +15,19 @@
 
 /* Devices */
 
-@desktop-min: 1299px;
-/* @desktop-max: */
-@tablet-min: 960px;
-@tablet-max: 1299px;
-@phone-min: 360px;
-@phone-max: 720px;
+	/*-- Breakpoints */
 
-@desktop: ~"only screen and (min-width: @{desktop-min})";
-@tablet: ~"only screen and (min-width: @{tablet-min}) and (max-width: @{tablet-max})";
-@phone: ~"only screen and (min-width: @{phone-min}) and (max-width: @{phone-max})";
+@desktop-width: 1280px;
+@laptop-width: 960px; /* The same as tablet in landscape orientation */
+@tablet-width: 480px; /* The same as phone in landscape orientation */
+@phone-width: 320px;
+
+	/*-- Media Queries */
+
+@desktop: ~"only screen and (min-width: @{desktop-width})";
+@laptop: ~"only screen and (min-width: @{laptop-width}) and (max-width: @{desktop-width})";
+@tablet: ~"only screen and (min-width: @{tablet-width}) and (max-width: @{laptop-width})";
+@phone: ~"only screen and (max-width: @{phone-width})";
 
 /* Columns */
 
@@ -56,7 +42,7 @@
 /* Typography */
 
 @default-font-size: 1em;
-@default-font-family: 'Georgia', 'Droid Serif', serif;
+@default-font-family: 'Droid Serif', serif;
 @text-line-height: 150%;
 @default-font-color: @basic-black;
 @default-pale-font-color: @basic-light-gray;
@@ -93,3 +79,20 @@
 @complimentary-color-light: lighten(@complimentary-color, 20%);
 @complimentary-color-dark: darken(@complimentary-color, 20%);
 @complimentary-color-ultralight: lighten(@complimentary-color-light, 20%);
+
+/* Buttons */
+
+@button-default-margin: 10px 0 0 5px;
+@button-default-padding: 10px 20px;
+
+@button-little-margin: @button-default-margin;
+@button-little-padding: 5px 10px;
+@button-large-margin: @button-default-margin;
+@button-large-padding: 15px 30px;
+@button-verylarge-margin: @button-default-margin;
+@button-verylarge-padding: 20px 40px;
+
+@button-default-font-size: @default-font-size * 1.2;
+@button-little-font-size: @default-font-size;
+@button-large-font-size: @default-font-size * 1.4;
+@button-verylarge-font-size: @default-font-size * 1.6;

@@ -40,3 +40,4 @@ Icon
 bower_components/
 node_modules/
 public/dev/css/concat.css
+public/img

@@ -2,13 +2,19 @@
 
 .container {
 	@media @phone {
-		max-width: @phone-container-width;
+		min-width: @phone-width;
+		max-width: @tablet-width;
 	}
 	@media @tablet {
-		max-width: @tablet-container-width;
+		min-width: @tablet-width;
+		max-width: @laptop-width;
+	}
+	@media @laptop {
+		min-width: @laptop-width;
+		max-width: @desktop-width;
 	}
 	@media @desktop {
-		max-width: @container-width;
+		max-width: @desktop-width;
 	}
 	
 	margin: 0 auto;
@@ -25,9 +31,12 @@
 
 /* Columns */
 
-.generate-columns(desktop, @columns);
-.generate-columns(tablet, @columns);
+/* TODO: Разобраться с and (orientation: lanscape) и т.д. */
+
 .generate-columns(phone, @columns);
+.generate-columns(tablet, @columns);
+.generate-columns(laptop, @columns);
+.generate-columns(desktop, @columns);
 
 .inner {
 	padding: 0 @gutter / 2;
