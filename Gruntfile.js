@@ -4,7 +4,8 @@ module.exports = function (grunt) {
 
 		vendor: {
 			jquery: 'bower_components/jquery/dist/jquery.js',
-			dropit: 'bower_components/dropit/dropit.js'
+			dropit: 'bower_components/dropit/dropit.js',
+			icomoon: 'bower_components/icomoon/'
 		},
 
 		prj: {
@@ -25,6 +26,14 @@ module.exports = function (grunt) {
 				options: {
 					create: ['public/dev', 'public/min']
 				}
+			}
+		},
+
+		copy: {
+			main: {
+				files: [
+					{ expand: true, flatten: true, src: ['<%= vendor.icomoon %>fonts/***'], dest: 'public/fonts' }
+				]
 			}
 		},
 
@@ -125,11 +134,12 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-uncss');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-mkdir');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-autoprefixer');
 
 	grunt.registerTask('build:prod', ['jshint', 'concat', 'uglify', 'less', 'autoprefixer', 'cssmin', 'uncss']);
 	grunt.registerTask('build:dev', ['concat', 'less', 'watch']);
-	grunt.registerTask('init', ['mkdir', 'concat', 'less', 'watch']);
+	grunt.registerTask('init', ['mkdir', 'copy', 'concat', 'less', 'watch']);
 	grunt.registerTask('default', ['watch']);
 }

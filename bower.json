@@ -4,5 +4,8 @@
   "dependencies": {
     "jquery": "latest",
     "dropit": "latest"
+  },
+  "devDependencies": {
+    "icomoon": "~0.0.1"
   }
 }
