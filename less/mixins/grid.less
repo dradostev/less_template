@@ -3,6 +3,8 @@
 		.column--@{device}--@{i} {
 			float: left;
 			width: (@i * 100% / @n);
+			padding: @columns-vertical-padding @columns-horizontal-padding;
+			box-sizing: border-box;
 		}
 	}
 	.generate-columns(@device, @n, (@i + 1));
