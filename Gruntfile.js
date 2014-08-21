@@ -8,23 +8,26 @@ module.exports = function (grunt) {
 			icomoon: 'bower_components/icomoon/'
 		},
 
+		/* Before use of icomoon it's needed to go to icomoon's style.css and append '../../' to font urls and 'color: inherit' to glyphs */
+
 		prj: {
-			root: 'public/',
-			dev: 'public/dev/',
-			prod: 'public/min/'
+			root: '../',
+			dev: '../dev/',
+			prod: '../',
+			template: 'templates/'
 		},
 
 		styles: 'less/',
 		scripts: 'js/',
 
 		banner: {
-			build: 'Built at: <%= grunt.template.now %>\nVersion: <%= pkg.version %>\nAuthor: <%= pkg.author.name %>\n\n'
+			build: '/*\n\n Theme Name: <%= pkg.name %>\nDescription: Шаблон для сайта <%= pkg.author.current-project %>\n Version: <%= pkg.version %>\n Author: <%= pkg.author.name %>\n Author e-mail: <%= pkg.author.email %> \n\n*/'
 		},
 
 		mkdir: {
 			all: {
 				options: {
-					create: ['public/dev', 'public/min']
+					create: ['../dev', '../img']
 				}
 			}
 		},
@@ -32,7 +35,8 @@ module.exports = function (grunt) {
 		copy: {
 			main: {
 				files: [
-					{ expand: true, flatten: true, src: ['<%= vendor.icomoon %>fonts/***'], dest: 'public/fonts' }
+					{ expand: true, flatten: true, src: ['<%= vendor.icomoon %>fonts/***'], dest: '<%= prj.root %>/fonts' },
+					{ expand: true, flatten: true, src: ['templates/***'], dest: '<%= prj.root %>' }
 				]
 			}
 		},
@@ -52,7 +56,7 @@ module.exports = function (grunt) {
 		concat: {
 			dist: {
 				src: [
-					'<%= vendor.jquery %>',
+					/*'<%= vendor.jquery %>',*/ //jQuery isn't needed due to it is embedded into WP
 					'<%= vendor.dropit %>',
 					'<%= scripts %>*.js'
 				],
@@ -70,7 +74,7 @@ module.exports = function (grunt) {
 		less: {
 			development: {
 				files: {
-					'<%= prj.dev %>css/concat.css': '<%= styles %>main.less'
+					'<%= prj.dev %>css/style.css': '<%= styles %>main.less'
 				}
 			}
 		},
@@ -90,7 +94,7 @@ module.exports = function (grunt) {
 					banner: '<%= banner.build %>'
 				},
 				files: {
-					"<%= prj.min %>css/styles.min.css" : ["<%= prj.dev %>css/*.css"]
+					"<%= prj.prod %>style.css" : ["<%= prj.dev %>css/*.css"]
 				}
 			}
 		},
@@ -98,7 +102,7 @@ module.exports = function (grunt) {
 		uncss: {
 		  dist: {
 			files: {
-			  '<%= prj.min %>css/prod.min.css': ['public/*.html']
+			  '<%= prj.prod %>css/style.css': ['<%= prj.root %>*.php']
 			}
 		  }
 		},
@@ -118,8 +122,15 @@ module.exports = function (grunt) {
 					livereload: true
 				}
 			},
-			html: {
-				files: ['<%= prj.root %>*.html'],
+			php: {
+				files: ['<%= prj.root %>*.php'],
+				options: {
+					livereload: true
+				}
+			},
+			php_templates: {
+				files: ['templates/*.php'],
+				tasks: ['copy'],
 				options: {
 					livereload: true
 				}

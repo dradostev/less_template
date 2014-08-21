@@ -1,6 +1,12 @@
 {
   "name": "less-template",
   "version": "0.1.0",
+  "author": {
+    "name": "Daniel Radostev",
+    "email": "d.a.radostev@gmail.com",
+    "website": "",
+    "current-project": "Дома и бани"
+  },
   "dependencies": {},
   "devDependencies": {
     "grunt": "latest",
